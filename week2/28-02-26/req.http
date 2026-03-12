@@ -1,0 +1,51 @@
+GET http://localhost:3000/user-api/users
+###read a user by id
+GET http://localhost:3000/user-api/users/2
+###create new user
+POST http://localhost:3000/user-api/users
+Content-Type: application/json
+
+{
+    "id":1,
+    "name":"ravi",
+    "age":30
+}
+###update a user
+PUT http://localhost:3000/user-api/users
+Content-Type: application/json
+
+{
+    "id":1,
+    "name":"bhanu",
+    "age":20
+    }
+###
+DELETE http://localhost:3000/user-api/users/1
+
+###creation of product API
+### read products
+GET http://localhost:3000/product-api/products
+###read a product by brand
+GET http://localhost:3000/product-api/products/brand/zigzag
+###creation of products
+POST http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "productid":105,
+    "name":"brush",
+    "brand":"zigzag",
+    "price":250
+}
+###update a product
+PUT http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "productid":105,
+    "name":"brush",
+    "brand":"zigzag",
+    "price":300
+}
+###delete a product
+DELETE http://localhost:3000/product-api/products/101

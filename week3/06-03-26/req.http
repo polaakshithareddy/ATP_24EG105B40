@@ -1,0 +1,69 @@
+ ###read all users(req to protected route)
+GET http://localhost:4000/user-api/users
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByaXlhQGdtYWlsLmNvbSIsImlhdCI6MTc3Mjg3Nzg0NiwiZXhwIjoxNzcyOTY0MjQ2fQ.Q7twnfsiUbPswIzao4VCLqhqWRt4F9mhmcAz6ageL9I; Path=/; HttpOnly; SameSite=Lax
+###
+GET http://localhost:4000/user-api/users
+###read a user by id
+GET http://localhost:4000/user-api/user
+###create new user
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "username":"geetha",
+    "password":"geetha",
+    "email":"geetha@gmail.com",
+    "age":20
+}
+###user verification
+POST  http://localhost:4000/user-api/auth
+Content-Type:application/json
+
+{
+    "email":"geetha@gmail.com",
+    "password":"geetha"
+}
+###update a user
+PUT http://localhost:4000/user-api/users/69abf4fb8ea5f5edc2d1b97c
+cookie:token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByaXlhQGdtYWlsLmNvbSIsImlhdCI6MTc3Mjg3NzQzNiwiZXhwIjoxNzcyOTYzODM2fQ.OLqIxxFaNJfxLTEBOOA0cV_dtf8cOm-aywpmlehw5Ao; Path=/; HttpOnly; SameSite=Lax
+Content-Type: application/json
+
+{
+    "username":"priya",
+    "password":"priya",
+    "email":"priya@gmail.com",
+    "age":21//here the comma is not written bcoz it is a json obj but in jsobj we can put comma
+    }
+
+    POST http://localhost:4000/user-api/users/
+###delte a user by id
+DELETE http://localhost:4000/user-api/users/69aa93683a54fde320ffaf50
+###add product to user cart(here we are using put method bcoz we are already adding cart to existing one)
+PUT http://localhost:4000/user-api/cart/product-id/69b257102f22a7441422bb91
+###creation of product API
+### read products
+GET http://localhost:4000/product-api/products
+###creation of products
+POST http://localhost:4000/product-api/products
+Content-Type: application/json
+
+{
+    "productId":101,
+    "productName":"brush",
+    "price":25000,
+    "brand":"zigzag"
+}
+###update a product
+PUT http://localhost:4000/product-api/products
+Content-Type: application/json
+
+{
+    "productId":101,
+    "productName":"brush",
+    "price":30000,
+    "brand":"zigzag"
+}
+###update a product by id
+PUT http://localhost:4000/product-api/products/69b257102f22a7441422bb91
+###delete a product
+DELETE http://localhost:4000/product-api/products
