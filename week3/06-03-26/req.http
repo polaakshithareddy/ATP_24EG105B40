@@ -43,18 +43,23 @@ PUT http://localhost:4000/user-api/cart/product-id/69b257102f22a7441422bb91
 ###creation of product API
 ### read products
 GET http://localhost:4000/product-api/products
+###creation of product API
+### read products
+GET http://localhost:4000/product-api/products
+###read a product by productid
+GET http://localhost:4000/product-api/products/101
 ###creation of products
 POST http://localhost:4000/product-api/products
 Content-Type: application/json
 
 {
-    "productId":101,
-    "productName":"brush",
-    "price":25000,
-    "brand":"zigzag"
+    "productId":102,
+    "productName":"comb",
+    "price":20000,
+    "brand":"ayurved"
 }
-###update a product
-PUT http://localhost:4000/product-api/products
+###update a product by productid
+PUT http://localhost:4000/product-api/products/101
 Content-Type: application/json
 
 {
@@ -63,7 +68,5 @@ Content-Type: application/json
     "price":30000,
     "brand":"zigzag"
 }
-###update a product by id
-PUT http://localhost:4000/product-api/products/69b257102f22a7441422bb91
-###delete a product
-DELETE http://localhost:4000/product-api/products
+###delete a product by productid
+DELETE http://localhost:4000/product-api/products/101
