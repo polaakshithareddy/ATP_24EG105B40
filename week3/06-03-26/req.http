@@ -43,9 +43,6 @@ PUT http://localhost:4000/user-api/cart/product-id/69b257102f22a7441422bb91
 ###creation of product API
 ### read products
 GET http://localhost:4000/product-api/products
-###creation of product API
-### read products
-GET http://localhost:4000/product-api/products
 ###read a product by productid
 GET http://localhost:4000/product-api/products/101
 ###creation of products
