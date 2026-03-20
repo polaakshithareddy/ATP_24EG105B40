@@ -1,0 +1,45 @@
+###Register user
+POST http://localhost:4000/auth/register
+Content-Type: application/json
+
+{
+    "firstName":"user1",
+    "lastName":"user1",
+    "email":"user1@example.com",
+    "role":"USER",
+    "password":"user1",
+    "profileImageUrl":"https://example.com/avatars/default.png"
+}
+
+###User login
+POST http://localhost:4000/auth/login
+Content-Type: application/json
+
+{
+    "email":"user1@example.com",
+    "password":"user1"
+}
+
+###USER LOGOUT(here post is not return bcoz we are not sending any data to backend we are just clearing the cookie in frontend)
+GET  http://localhost:4000/auth/logout
+
+###READ ARTICLES OF ALL AUTHORS
+GET http://localhost:4000/user-api/article
+###ADD COMMENT BY USER TO AN ARTICLE
+PUT http://localhost:4000/user-api/article
+Content-Type: application/json
+
+{
+
+    "articleId":"69b4d8852847b4d861c79524",
+    "comment":"This is a useful article!"
+}
+
+###CHANGE PASSWORD
+PUT http://localhost:4000/auth/password
+Content-Type: application/json
+
+{
+    "currentPassword": "user1",
+    "newPassword": "User1"
+}

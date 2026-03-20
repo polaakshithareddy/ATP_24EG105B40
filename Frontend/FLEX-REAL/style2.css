@@ -1,0 +1,44 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+/*nav styles*/
+nav{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    background-color:rgb(220, 214, 214);
+}
+nav ul{
+    list-style-type: none;
+    display:flex;
+    justify-content:space-between;
+    width: 200px;
+    padding: 10px;
+}
+main{
+    margin:10px 100px;
+    background-color:rgb(236, 145, 160);
+}
+.cards{
+    display: flex;
+    gap:40px;
+
+}
+main h1{
+    text-align: center;
+}
+section img{
+    width:100%;
+}
+@media screen and (min-width:600px){
+    .cards{
+        flex-direction: row;
+    }
+}
+@media screen and (max-width:599px){
+    .cards{
+        flex-direction: column;
+    }
+}
