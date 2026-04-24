@@ -22,11 +22,11 @@ app.use(exp.json())
 //cookie parser middleware
 app.use(cookieParser())
 //path routing middleware
-app.use("https://atp-24eg105b40.onrender.com/user-api",userApp)
-app.use("https://atp-24eg105b40.onrender.com/article-api",articleApp)
-app.use("https://atp-24eg105b40.onrender.com/author-api",authorApp)
-app.use("https://atp-24eg105b40.onrender.com/auth",commonApp)
-app.use("https://atp-24eg105b40.onrender.com/admin-api",adminApp)
+app.use("/user-api",userApp)
+app.use("/article-api",articleApp)
+app.use("/author-api",authorApp)
+app.use("/auth",commonApp)
+app.use("/admin-api",adminApp)
 //connect to db
 const connectDB = async () => {
     try {
