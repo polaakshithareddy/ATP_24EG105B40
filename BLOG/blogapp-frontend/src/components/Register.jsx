@@ -49,7 +49,7 @@ function Register() {
       //start loading
       setLoading(true)
       //make http  post request to create user
-      let res = await axios.post("http://localhost:4000/auth/register", formData, { withCredentials: true })
+      let res = await axios.post("https://atp-24eg105b40.onrender.com/auth/register", formData, { withCredentials: true })
       if (res.status === 201) {
         //navigate to login
         navigate("/login")
