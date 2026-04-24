@@ -13,7 +13,7 @@ config();
 const app = exp()
 //enable cors
 app.use(cors({
-    origin: 'http://localhost:5174', // force explicitly to 5174
+    origin: 'http://localhost:5174,https://atp-24eg105b40.onrender.com', // force explicitly to 5174
     credentials:true,//token is sent
 }))
 
