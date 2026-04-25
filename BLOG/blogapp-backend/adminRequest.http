@@ -1,6 +1,6 @@
 
 ### ADMIN LOGIN
-POST http://localhost:5000/common-api/login
+POST https://atp-24eg105b40.onrender.com/common-api/login
 Content-Type: application/json
 
 {
@@ -10,10 +10,10 @@ Content-Type: application/json
 
 ### CHANGE PASSWORD
 ### READ ALL USERS AND AUTHORS (ONLY EMAILS)
-GET http://localhost:5000/admin-api/users
+GET https://atp-24eg105b40.onrender.com/admin-api/users
 
 ### BLOCK OR ACTIVATE USER OR AUTHOR
-PATCH http://localhost:5000/admin-api/user-status
+PATCH https://atp-24eg105b40.onrender.com/admin-api/user-status
 Content-Type: application/json
 
 {
