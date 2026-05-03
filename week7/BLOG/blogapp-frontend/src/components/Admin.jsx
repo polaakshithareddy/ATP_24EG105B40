@@ -23,7 +23,7 @@ function Admin() {
   const fetchUsers = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:4000/admin-api/users", { withCredentials: true });
+      const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/admin-api/users`, { withCredentials: true });
       if (res.data.payload) {
         setUsers(res.data.payload);
       }
@@ -38,7 +38,7 @@ function Admin() {
     try {
       const newStatus = !currentStatus;
       const res = await axios.patch(
-        "http://localhost:4000/admin-api/user-status",
+        `${import.meta.env.VITE_API_BASE_URL}/admin-api/user-status`,
         { email, isUserActive: newStatus },
         { withCredentials: true }
       );

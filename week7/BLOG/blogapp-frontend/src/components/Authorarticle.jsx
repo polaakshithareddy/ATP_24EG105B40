@@ -34,7 +34,7 @@ function AuthorArticles() {
       try {
        //read articles of current author
         setLoading(true);
-      let res = await axios.get("http://localhost:4000/author-api/article",{withCredentials:true});//token should be added to request so we write withcredentials
+      let res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/author-api/article`,{withCredentials:true});//token should be added to request so we write withcredentials
       if(res.status === 200){
         setArticles(res.data.payload);
       }

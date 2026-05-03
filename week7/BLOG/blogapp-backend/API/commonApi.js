@@ -75,8 +75,8 @@ commonApp.post("/login", async (req, res) => {
     //set token to res header as http only cookie
     res.cookie("token", signedToken, {
         httpOnly: true,
-        secure: false,
-        sameSite: "lax"
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
     });
     //remove password from user document
     let userObj = user.toObject();
@@ -89,8 +89,8 @@ commonApp.get("/logout", (req, res) => {
     //clear token from cookie storage
     res.clearCookie("token", {
         httpOnly: true,
-        secure: false,
-        sameSite: "lax"
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
     });
     //send response
     res.status(200).json({ message: "Logout successful" })

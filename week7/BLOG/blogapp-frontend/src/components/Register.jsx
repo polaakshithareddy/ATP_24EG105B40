@@ -49,7 +49,7 @@ function Register() {
       //start loading
       setLoading(true)
       //make http  post request to create user
-      let res = await axios.post("http://localhost:4000/auth/register", formData, { withCredentials: true })
+      let res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/auth/register`, formData, { withCredentials: true })
       if (res.status === 201) {
         //navigate to login
         navigate("/login")
