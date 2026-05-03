@@ -43,9 +43,9 @@ commonApp.post("/register", upload.single("profileImageUrl"), async (req, res) =
         //send response
         res.status(201).json({ message: "User created" })
     } catch (err) {
-        console.log("err is ", err);
-        //delete image from cloudinary
-        if (cloudinaryResult.public_id) {
+        console.error("[register] error:", err.name, err.message);
+        //delete image from cloudinary only if upload succeeded before the error
+        if (cloudinaryResult?.public_id) {
             await cloudinary.uploader.destroy(cloudinaryResult.public_id);
         }
         next(err);

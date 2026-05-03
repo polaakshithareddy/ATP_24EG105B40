@@ -1,8 +1,9 @@
 services:
   - type: web
-    name: blogapp-backend
+    name: fullstack-backend
     env: node
     plan: free
+    rootDir: week6/FULLSTACK/Backend
     buildCommand: npm install
     startCommand: npm start
     envVars:
@@ -11,13 +12,7 @@ services:
       # PORT is injected automatically by Render — do NOT set it manually
       - key: DB_URL
         sync: false   # set in Render dashboard: your MongoDB Atlas SRV URI
-      - key: SECRET_KEY
+      - key: JWT_SECRET
         sync: false   # set in Render dashboard: your JWT secret
-      - key: CLOUDINARY_CLOUD_NAME
-        value: dn62faa5n
-      - key: CLOUDINARY_API_KEY
-        value: 852712912553287
-      - key: CLOUDINARY_API_SECRET
-        sync: false   # set in Render dashboard: your Cloudinary API secret
       - key: FRONTEND_URL
-        value: https://atp-24-eg-105-b40-cgw4.vercel.app
+        sync: false   # set in Render dashboard: https://your-vercel-app.vercel.app
