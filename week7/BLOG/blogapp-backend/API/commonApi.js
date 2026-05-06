@@ -12,7 +12,7 @@ import cloudinary from "../config/cloudinary.js";
 config();
 
 //ROUTE FOR REGISTRATION
-commonApp.post("/register", upload.single("profileImageUrl"), async (req, res) => {
+commonApp.post("/register", upload.single("profileImageUrl"), async (req, res, next) => {
     let cloudinaryResult;
     try {
         let allowedRoles = ["USER", "AUTHOR"]//we are writing here bcoz admin cannot register directly admin should be made no need to hash if there is no proper role so this code written before hashing

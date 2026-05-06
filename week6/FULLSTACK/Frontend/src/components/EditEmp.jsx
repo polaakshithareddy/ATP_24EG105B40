@@ -4,39 +4,39 @@ import { useLocation, useNavigate } from "react-router";
 import axios from "axios"
 
 function EditEmployee() {
-  const{
+  const {
     register,
     handleSubmit,
-    formState:{ errors},
+    formState: { errors },
     setValue,
-  }=useForm();
+  } = useForm();
 
   //get empObj from navigate hook
-const {state} = useLocation();
-const navigate = useNavigate();
-useEffect(()=>{
-  setValue("name",state.name);
-  setValue("email",state.email);
-  setValue("mobile",state.mobile);
-  setValue("designation",state.designation);
-  setValue("companyName",state.companyName);
+  const { state } = useLocation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    setValue("name", state?.name);
+    setValue("email", state?.email);
+    setValue("mobile", state?.mobile);
+    setValue("designation", state?.designation);
+    setValue("companyName", state?.companyName);
 
-},[]);
-const saveModifiedEmp = async(modifiedEmp)=>{
-  //console.log(modifiedEmp)
-  //make HTTP PUT Req
-  const res = await axios.put(`http://localhost:4000/emp-api/employees/${state._id}`,modifiedEmp)
-  if(res.status===200){
-    //navigate to ListOfEmps
-    navigate("/list");
-  }
-};
+  }, []);
+  const saveModifiedEmp = async (modifiedEmp) => {
+    //console.log(modifiedEmp)
+    //make HTTP PUT Req
+    const res = await axios.put(`http://localhost:4000/emp-api/employees/${state?._id}`, modifiedEmp)
+    if (res.status === 200) {
+      //navigate to ListOfEmps
+      navigate("/list");
+    }
+  };
 
   return (
     <div>
       <h1 className="text-5xl text-center text-gray-600">Edit Employee</h1>
       {/*form */}
-      <form className=" max-w-md mx-auto mt-10" >
+      <form className=" max-w-md mx-auto mt-10" onSubmit={handleSubmit(saveModifiedEmp)}>
         <input
           type="text"
           placeholder="Enter name "
