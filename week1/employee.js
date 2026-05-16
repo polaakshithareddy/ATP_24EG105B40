@@ -30,7 +30,7 @@ const employees = [
 employees.splice(1,0,{eno :106,name:"akshitha",marks:[70,80,90]})//splice(index,deletionelement,insertvalue)
 console.log(employees)
 //Remove an emp with name "Kiran"
-employees.splice(4,1)//splice(index,no.of delete ele)
+employees.splice(4,1)//splice(index,no.of elements to delete)
 console.log(employees)
 //Change the last mark 95 to 75 of emp  "Sneha"
 employees.splice(3,1,{eno : 103,name:'sneha',marks:[88,92,75]})//splice(index,deletion,insertvalue)
